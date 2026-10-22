@@ -1,0 +1,285 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-sage: #879783;
+  --forest-green: #233B30;
+  --forest-deep: #1A2D24;
+  --dark-olive: #4D6249;
+  --soft-sage: #DCE4D8;
+  --warm-ivory: #F7F5EF;
+  --pure-white: #FFFFFF;
+  --muted-charcoal: #292D29;
+  --earthy-beige: #D8CCB8;
+
+  --background: 44 26% 95%;
+  /* #F7F5EF */
+  --foreground: 120 4% 17%;
+  /* #292D29 */
+  --card: 0 0% 100%;
+  --card-foreground: 120 4% 17%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 120 4% 17%;
+  --border: 96 16% 87%;
+  /* #DCE4D8 */
+  --input: 96 16% 87%;
+  --ring: 108 8% 55%;
+  /* #879783 */
+  --radius: 0.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  background-color: #F7F5EF;
+  color: #292D29;
+}
+
+body {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #292D29;
+  background-color: #F7F5EF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-manrope), var(--font-inter), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Fluid Typography Utilities */
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 5.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.card-title {
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.body-large {
+  font-size: clamp(1.05rem, 1.2vw, 1.1875rem);
+  line-height: 1.65;
+}
+
+.editorial-serif {
+  font-family: var(--font-editorial), "Playfair Display", Georgia, serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F5EF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A4B4A0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #879783;
+}
+
+/* Subtle transitions */
+.transition-luxury {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle editorial image overlays */
+.img-overlay-dark {
+  background: linear-gradient(180deg, rgba(26, 45, 36, 0.2) 0%, rgba(26, 45, 36, 0.75) 100%);
+}
+
+.img-overlay-gentle {
+  background: linear-gradient(180deg, rgba(26, 45, 36, 0) 30%, rgba(26, 45, 36, 0.6) 100%);
+}
+
+/* Luxury Card Hover Effect */
+.card-luxury {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.card-luxury:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(26, 45, 36, 0.12);
+  border-color: rgba(135, 151, 131, 0.45);
+}
+
+/* Ambient Glow Keyframe */
+@keyframes ambientPulse {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(1) translate(0, 0);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(1.08) translate(10px, -8px);
+  }
+}
+
+.animate-ambient-glow {
+  animation: ambientPulse 9s ease-in-out infinite;
+}
+
+@keyframes floatGentle {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shimmer-mask {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-mask::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0,
+      rgba(255, 255, 255, 0.08) 20%,
+      rgba(255, 255, 255, 0.2) 60%,
+      rgba(255, 255, 255, 0));
+  animation: shimmer 3s infinite;
+  content: '';
+}
+
+/* --- Aditya Birla Signature Animations --- */
+
+/* Ken-Burns Continuous Ambient Zoom */
+@keyframes kenBurnsZoom {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurnsZoom 20s ease-in-out infinite alternate;
+}
+
+/* Aditya Birla Slide & Fade In for Hero Title */
+@keyframes adityaSlideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-fade-in {
+  animation: adityaSlideFadeIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Nav Link Hover Underline (Aditya Birla Style) */
+.nav-link-animated {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link-animated::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #879783;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 9999px;
+}
+
+.nav-link-animated:hover::after,
+.nav-link-animated.active::after {
+  width: 80%;
+}
+
+/* 3D Flip Card Perspective */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.flip-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+.flip-card-inner:hover {
+  transform: rotateY(-6deg) rotateX(4deg) translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(26, 45, 36, 0.25);
+}
+
+/* Pulse Ping Animation for Indicator Dots */
+@keyframes ripplePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(135, 151, 131, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 12px rgba(135, 151, 131, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(135, 151, 131, 0);
+  }
+}
+
+.animate-ripple {
+  animation: ripplePulse 2.4s infinite;
+}
