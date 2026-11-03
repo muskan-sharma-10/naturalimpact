@@ -24,35 +24,34 @@ const config = {
     },
     extend: {
       colors: {
+        forest: {
+          deep: "#123D2A", // Deep Forest Green
+          DEFAULT: "#1C5038", // Rich Evergreen
+          rich: "#1C5038",
+          dark: "#123D2A",
+          light: "#286649",
+        },
+        earth: {
+          DEFAULT: "#B78B53", // Restrained Earth Accent
+          light: "#C8A06A",
+          dark: "#966D3B",
+          subtle: "#F0E4D2",
+        },
         sage: {
-          DEFAULT: "#879783",
-          light: "#A4B4A0",
+          DEFAULT: "#A8B7A0", // Muted Sage
+          light: "#C2CEC0",
           soft: "#DCE4D8",
           dark: "#6F806B",
         },
-        forest: {
-          DEFAULT: "#233B30",
-          deep: "#1A2D24",
-          light: "#2D4B3E",
-        },
-        olive: {
-          DEFAULT: "#4D6249",
-          dark: "#3B4D38",
-          light: "#60795B",
-        },
         ivory: {
-          DEFAULT: "#F7F5EF",
+          DEFAULT: "#F7F5EF", // Warm Ivory
           light: "#FCFAF6",
           dark: "#EDEAE0",
         },
         charcoal: {
-          DEFAULT: "#292D29",
-          soft: "#404640",
-          muted: "#6B726A",
-        },
-        beige: {
-          DEFAULT: "#D8CCB8",
-          soft: "#EBE5D8",
+          DEFAULT: "#20251F", // Charcoal
+          soft: "#363D34",
+          muted: "#5C6659",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

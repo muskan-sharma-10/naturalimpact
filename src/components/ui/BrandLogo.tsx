@@ -40,8 +40,8 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
       <div
         className={`relative flex items-center justify-center shrink-0 ${iconSizes[size]} rounded-lg transition-transform duration-300 group-hover:scale-105 ${
           lightMode
-            ? "bg-[#233B30] text-[#F7F5EF] shadow-sm"
-            : "bg-[#879783] text-[#1A2D24] shadow-md"
+            ? "bg-[#123D2A] text-[#F7F5EF] shadow-sm"
+            : "bg-[#1C5038] text-[#F7F5EF] border border-[#B78B53]/40 shadow-md"
         }`}
       >
         <svg
@@ -66,7 +66,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           />
           <path
             d="M16 19C18.5 17 21 16 21 16"
-            stroke="currentColor"
+            stroke="#B78B53"
             strokeWidth="1.8"
             strokeLinecap="round"
           />
@@ -83,14 +83,14 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         <span
           className={`font-semibold font-heading tracking-tight transition-colors duration-200 ${
             textSizes[size]
-          } ${lightMode ? "text-[#233B30] group-hover:text-[#4D6249]" : "text-[#F7F5EF] group-hover:text-[#DCE4D8]"}`}
+          } ${lightMode ? "text-[#123D2A] group-hover:text-[#1C5038]" : "text-[#F7F5EF] group-hover:text-[#FFFFFF]"}`}
         >
           NATURAL IMPACT
         </span>
         <span
           className={`font-medium uppercase tracking-[0.24em] mt-0.5 ${
             subtextSizes[size]
-          } ${lightMode ? "text-[#879783]" : "text-[#A4B4A0]"}`}
+          } ${lightMode ? "text-[#B78B53]" : "text-[#C8A06A]"}`}
         >
           GROUP
         </span>

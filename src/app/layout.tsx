@@ -54,6 +54,14 @@ export const metadata: Metadata = {
       },
     ],
   },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
@@ -67,7 +75,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-[#F7F5EF] text-[#292D29] antialiased selection:bg-[#879783]/30 selection:text-[#233B30]">
+      <body className="min-h-screen bg-[#F7F5EF] text-[#20251F] antialiased selection:bg-[#B78B53]/25 selection:text-[#123D2A]">
         {children}
       </body>
     </html>

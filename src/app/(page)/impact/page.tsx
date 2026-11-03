@@ -13,9 +13,10 @@ import {
   ArrowRight,
   Globe2,
 } from "lucide-react";
+import { AnimatedLine } from "@/components/ui/motion";
 
 export const metadata = {
-  title: "Our Impact & Sustainability | Nature-Based Outcomes",
+  title: "Our Impact & Responsibility | Natural Impact Group",
   description:
     "Explore Natural Impact Group's verified ground-level impact: 85,000+ acres under regenerative cultivation, 32,000+ smallholder producers mobilized, and 100% cloud batch traceability.",
 };
@@ -73,19 +74,21 @@ export default function ImpactPage() {
   ];
 
   return (
-    <div className="pt-24 md:pt-32 pb-24 bg-[#F7F5EF] text-[#292D29]">
+    <div className="pt-24 md:pt-32 pb-24 bg-[#F7F5EF] text-[#20251F]">
       {/* Editorial Page Hero */}
-      <section className="py-16 md:py-24 border-b border-[#DCE4D8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-24 border-b border-[#DCE4D8] bg-[#123D2A] text-white relative overflow-hidden">
+        <div className="absolute top-1/2 right-10 w-96 h-96 rounded-full bg-[#1C5038]/40 blur-[130px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#879783]/20 border border-[#879783]/40 text-xs font-semibold text-[#233B30] uppercase tracking-wider mb-6">
-              <Globe2 className="w-3.5 h-3.5 text-[#4D6249]" />
-              <span>Verifiable Responsibility</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-semibold text-[#B78B53] uppercase tracking-wider mb-6">
+              <Globe2 className="w-3.5 h-3.5" />
+              <span>Verifiable Group Responsibility</span>
             </div>
-            <h1 className="hero-title font-heading font-medium text-[#233B30] tracking-tight">
+            <h1 className="hero-title font-heading font-medium text-white tracking-tight leading-[1.08]">
               Evidence-Led Ecological & Rural Impact.
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-[#404640] font-light leading-relaxed">
+            <p className="mt-6 text-lg sm:text-xl text-[#DCE4D8] font-light leading-relaxed">
               We reject unsubstantiated corporate greenwashing in favor of verifiable ground-level metrics, audited commodity provenance, and durable producer equity.
             </p>
           </div>
@@ -93,15 +96,15 @@ export default function ImpactPage() {
       </section>
 
       {/* Verified Metrics Bar */}
-      <section className="py-12 bg-[#233B30] text-white border-b border-[#1A2D24]">
+      <section className="py-12 bg-[#1C5038] text-white border-b border-[#286649]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {verifiedMetrics.slice(1, 5).map((m, idx) => (
-              <div key={idx} className="border-l border-[#4D6249] pl-4">
+              <div key={idx} className="border-l-2 border-[#B78B53] pl-4">
                 <div className="text-2xl sm:text-3xl font-heading font-bold text-white">
                   {m.value}{m.numericSuffix}
                 </div>
-                <div className="text-xs uppercase tracking-wider text-[#A4B4A0] mt-1">
+                <div className="text-xs uppercase tracking-wider text-[#A8B7A0] mt-1 font-semibold">
                   {m.label}
                 </div>
               </div>
@@ -119,45 +122,45 @@ export default function ImpactPage() {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-3xl p-8 sm:p-12 border border-[#DCE4D8] shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                className="bg-white rounded-3xl p-8 sm:p-12 border border-[#DCE4D8] shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
               >
                 <div className={`lg:col-span-7 ${isEven ? "" : "lg:order-2"}`}>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#879783]/15 text-[#233B30] flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-[#123D2A]/10 text-[#123D2A] flex items-center justify-center">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-xs font-mono font-bold text-[#879783]">
+                    <span className="text-xs font-mono font-bold text-[#B78B53]">
                       PILLAR 0{idx + 1}
                     </span>
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl font-heading font-semibold text-[#233B30]">
+                  <h2 className="text-2xl sm:text-3xl font-heading font-medium text-[#123D2A] leading-snug">
                     {pillar.title}
                   </h2>
 
-                  <p className="mt-4 text-base text-[#404640] font-light leading-relaxed">
+                  <p className="mt-4 text-base text-[#363D34] font-light leading-relaxed">
                     {pillar.description}
                   </p>
 
-                  <div className="mt-6 pt-6 border-t border-[#DCE4D8] space-y-2">
+                  <div className="mt-6 pt-6 border-t border-[#DCE4D8] space-y-2.5">
                     {pillar.highlights.map((h, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-[#233B30]">
-                        <CheckCircle className="w-4 h-4 text-[#4D6249] shrink-0" />
-                        <span>{h}</span>
+                      <div key={i} className="flex items-center gap-2.5 text-sm text-[#20251F]">
+                        <CheckCircle className="w-4 h-4 text-[#1C5038] shrink-0" />
+                        <span className="font-medium">{h}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 <div className={`lg:col-span-5 ${isEven ? "" : "lg:order-1"}`}>
-                  <div className="bg-[#EDEAE0] rounded-2xl p-8 border border-[#DCE4D8] text-center flex flex-col items-center justify-center min-h-[260px]">
-                    <span className="text-xs uppercase tracking-widest text-[#879783] font-semibold">
+                  <div className="bg-[#123D2A] text-white rounded-2xl p-8 border border-[#1C5038] text-center flex flex-col items-center justify-center min-h-[260px] shadow-lg">
+                    <span className="text-xs uppercase tracking-widest text-[#B78B53] font-semibold">
                       Verified Indicator
                     </span>
-                    <div className="text-4xl sm:text-5xl font-heading font-extrabold text-[#233B30] mt-3 mb-2">
+                    <div className="text-4xl sm:text-5xl font-heading font-bold text-white mt-3 mb-2">
                       {pillar.metric}
                     </div>
-                    <p className="text-xs text-[#6B726A] max-w-xs">
+                    <p className="text-xs text-[#DCE4D8]/80 max-w-xs font-light">
                       Documented through field registries, GIS polygon records, and third-party accredited audits.
                     </p>
                   </div>
@@ -172,83 +175,58 @@ export default function ImpactPage() {
       <section className="py-20 bg-[#EDEAE0] border-t border-[#DCE4D8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#879783]">
+            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#1C5038]">
               Global Frameworks
             </span>
-            <h3 className="section-title font-heading font-medium text-[#233B30] tracking-tight mt-2">
+            <h3 className="section-title font-heading font-medium text-[#123D2A] tracking-tight mt-2 leading-[1.14]">
               Alignment With United Nations SDGs
             </h3>
-            <p className="mt-4 text-base text-[#404640] font-light">
-              Our interventions directly contribute to measurable indicators across four primary global objectives:
+            <p className="mt-4 text-base text-[#363D34] font-light">
+              Our corporate interventions directly contribute to verifiable targets across four primary global goals:
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-2xl p-6 border border-[#DCE4D8]">
-              <span className="text-xs font-bold text-[#879783]">SDG 1 & 2</span>
-              <h4 className="font-heading font-semibold text-lg text-[#233B30] mt-1 mb-2">
+            <div className="bg-white rounded-2xl p-6 border border-[#DCE4D8] shadow-xs">
+              <span className="text-xs font-bold text-[#B78B53] font-mono">SDG 1 & 2</span>
+              <h4 className="font-heading font-semibold text-lg text-[#123D2A] mt-1 mb-2">
                 No Poverty & Zero Hunger
               </h4>
-              <p className="text-xs text-[#6B726A] leading-relaxed">
-                Enhancing smallholder net incomes by 38% through decentralized value addition and fair market price realization.
+              <p className="text-xs text-[#363D34] leading-relaxed font-light">
+                Direct farmgate aggregation and price realization elevate rural household net income by 38%.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 border border-[#DCE4D8]">
-              <span className="text-xs font-bold text-[#879783]">SDG 8</span>
-              <h4 className="font-heading font-semibold text-lg text-[#233B30] mt-1 mb-2">
-                Decent Work & Economic Growth
+            <div className="bg-white rounded-2xl p-6 border border-[#DCE4D8] shadow-xs">
+              <span className="text-xs font-bold text-[#B78B53] font-mono">SDG 8</span>
+              <h4 className="font-heading font-semibold text-lg text-[#123D2A] mt-1 mb-2">
+                Decent Work & Growth
               </h4>
-              <p className="text-xs text-[#6B726A] leading-relaxed">
-                Incubating autonomous farmer-owned businesses and creating local green enterprise jobs for youth and women.
+              <p className="text-xs text-[#363D34] leading-relaxed font-light">
+                Incorporating farmer collectives as formalized corporations with working capital access and professional management.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 border border-[#DCE4D8]">
-              <span className="text-xs font-bold text-[#879783]">SDG 13</span>
-              <h4 className="font-heading font-semibold text-lg text-[#233B30] mt-1 mb-2">
-                Climate Action
+            <div className="bg-white rounded-2xl p-6 border border-[#DCE4D8] shadow-xs">
+              <span className="text-xs font-bold text-[#B78B53] font-mono">SDG 12</span>
+              <h4 className="font-heading font-semibold text-lg text-[#123D2A] mt-1 mb-2">
+                Responsible Consumption
               </h4>
-              <p className="text-xs text-[#6B726A] leading-relaxed">
-                Sequestering soil organic carbon and integrating climate-hardy heritage crops across 85,000+ rainfed acres.
+              <p className="text-xs text-[#363D34] leading-relaxed font-light">
+                100% cryptographic batch provenance and deforestation-free supply chains compliant with international EUDR mandates.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 border border-[#DCE4D8]">
-              <span className="text-xs font-bold text-[#879783]">SDG 15</span>
-              <h4 className="font-heading font-semibold text-lg text-[#233B30] mt-1 mb-2">
-                Life on Land
+            <div className="bg-white rounded-2xl p-6 border border-[#DCE4D8] shadow-xs">
+              <span className="text-xs font-bold text-[#B78B53] font-mono">SDG 13 & 15</span>
+              <h4 className="font-heading font-semibold text-lg text-[#123D2A] mt-1 mb-2">
+                Climate Action & Life on Land
               </h4>
-              <p className="text-xs text-[#6B726A] leading-relaxed">
-                Restoring degraded agroforestry corridors with 1.2M+ native trees and guaranteeing zero deforestation via polygon satellite tracking.
+              <p className="text-xs text-[#363D34] leading-relaxed font-light">
+                85,000+ acres under regenerative agroforestry canopies and micro-catchment water conservation.
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Box */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#233B30] rounded-3xl p-8 sm:p-12 text-white border border-[#3B4D38] flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <span className="text-xs uppercase tracking-widest text-[#A4B4A0]">
-              Auditing & ESG Partnership
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-heading font-semibold text-white mt-1">
-              Interested in Verifiable Scope-3 Insetting?
-            </h3>
-            <p className="mt-2 text-sm text-[#DCE4D8]/90 max-w-xl font-light">
-              Connect with our sustainability practice at Noida One to explore accredited regenerative supply chains for your institutional brand.
-            </p>
-          </div>
-
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#879783] hover:bg-[#6F806B] text-[#1A2D24] font-semibold text-sm transition-all shrink-0"
-          >
-            <span>Inquire About ESG Insetting</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
       </section>
     </div>

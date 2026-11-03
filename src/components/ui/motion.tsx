@@ -236,7 +236,7 @@ export const ScrollProgressBar: React.FC = () => {
       aria-hidden="true"
     >
       <div
-        className="h-full bg-gradient-to-r from-[#879783] via-[#DCE4D8] to-[#879783] transition-all duration-150 ease-out shadow-[0_0_8px_rgba(135,151,131,0.6)]"
+        className="h-full bg-gradient-to-r from-[#B78B53] via-[#A8B7A0] to-[#1C5038] transition-all duration-150 ease-out shadow-[0_0_8px_rgba(183,139,83,0.6)]"
         style={{ width: `${scrollProgress}%` }}
       />
     </div>
@@ -433,7 +433,7 @@ export const AdityaFloatingDock: React.FC = () => {
       <button
         onClick={scrollToTop}
         aria-label="Scroll back to top"
-        className="relative w-12 h-12 rounded-full bg-[#1A2D24]/90 backdrop-blur-md border border-white/20 shadow-2xl flex items-center justify-center text-white hover:scale-110 active:scale-95 transition-all duration-300 group hover:border-[#879783]"
+        className="relative w-12 h-12 rounded-full bg-[#123D2A]/90 backdrop-blur-md border border-white/20 shadow-2xl flex items-center justify-center text-white hover:scale-110 active:scale-95 transition-all duration-300 group hover:border-[#B78B53]"
       >
         {/* SVG Circular Progress Track */}
         <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 48 48">
@@ -448,7 +448,7 @@ export const AdityaFloatingDock: React.FC = () => {
             cx="24"
             cy="24"
             r="20"
-            className="stroke-[#879783] fill-none transition-all duration-150"
+            className="stroke-[#B78B53] fill-none transition-all duration-150"
             strokeWidth="2.5"
             strokeDasharray="125.66"
             strokeDashoffset={125.66 - (125.66 * scrollProgress) / 100}
@@ -467,7 +467,7 @@ export const AdityaFloatingDock: React.FC = () => {
         </svg>
 
         {/* Tooltip on Hover */}
-        <span className="absolute right-14 px-2.5 py-1 rounded-md bg-[#1A2D24] text-[#F7F5EF] text-[11px] font-medium tracking-wider whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-md border border-white/10">
+        <span className="absolute right-14 px-2.5 py-1 rounded-md bg-[#123D2A] text-[#F7F5EF] text-[11px] font-medium tracking-wider whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-md border border-white/10">
           Back to Top ({Math.round(scrollProgress)}%)
         </span>
       </button>
